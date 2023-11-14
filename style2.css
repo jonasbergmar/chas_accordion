@@ -2,9 +2,51 @@ html {
   background: #f2f1f4;
   color: #19171c;
 }
+
 .description {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
-.active + .description {
-  display: block;
+
+.active .description {
+  max-height: 100px; /* Adjust the height as needed */
+}
+
+.accordion {
+  background-color: black;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.section:hover {
+  color: white;
+  opacity: 30%;
+  cursor: pointer;
+  scale: 1.2;
+}
+
+i {
+  margin-right: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  margin: 20px 20px 20px 20px;
+}
+
+.active > i {
+  transform: rotate(180deg);
+  transition: 0.4s;
 }
